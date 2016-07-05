@@ -4458,6 +4458,13 @@ public final class Settings {
         public static final String DATA_ACTIVITY_ARROWS = "data_activity_arrows";
 
         /**
+         * Transition effect in RR tabs
+         *
+         * @hide
+         */
+        public static final String RR_SETTINGS_TABS_EFFECT = "rr_settings_tabs_effect";
+
+        /**
          * Settings to backup. This is here so that it's in the same place as the settings
          * keys and easy to update.
          *
