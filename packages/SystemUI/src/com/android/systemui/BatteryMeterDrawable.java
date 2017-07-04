@@ -284,6 +284,12 @@ public class BatteryMeterDrawable extends Drawable implements
         }
 
         postInvalidate();
+
+       if (Settings.Secure.getInt(mContext.getContentResolver(),
+            Settings.Secure.STATUS_BAR_PULSE_CHARGING_BATTERY, 0) == 1) {
+            animateBattery(level, pluggedIn, charging);
+       }
+       postInvalidate();
     }
 
     @Override
@@ -359,7 +365,7 @@ public class BatteryMeterDrawable extends Drawable implements
         return color;
     }
 
-    public void animateCircleBattery(int level, boolean pluggedIn, boolean charging) {
+    public void animateBattery(int level, boolean pluggedIn, boolean charging) {
         if (charging) {
             if (mAnimator != null) mAnimator.cancel();
 
