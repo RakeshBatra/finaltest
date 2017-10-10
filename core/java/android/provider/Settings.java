@@ -4031,6 +4031,14 @@ public final class Settings {
          */
         public static final String DISABLE_TRANSITION_ANIMATIONS = "disable_transition_animations";
 
+	/**
+         * Transition effect in RR tabs
+         *
+         * @hide
+         */
+        public static final String DIRTY_TWEAKS_TABS_EFFECT = "dirty_tweaks_tabs_effect";
+
+
         /**
          * Change quick settings tiles animation style
          *
@@ -6046,7 +6054,7 @@ public final class Settings {
         @Deprecated
         public static final String LOCK_PATTERN_VISIBLE = "lock_pattern_visible_pattern";
 
-        /**
+	/**
          * Whether lock pattern will vibrate as user enters (0 = false, 1 =
          * true)
          *
