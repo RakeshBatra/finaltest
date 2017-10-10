@@ -166,6 +166,13 @@
             android:summary="@string/data_disabled_icon_summary"
             android:defaultValue="true"/>
 
+    <com.colt.settings.preferences.SecureSettingSwitchPreference
+            android:key="status_bar_pulse_charging_battery"
+            android:title="@string/status_bar_pulse_charging_battery_title"
+            android:summaryOn="@string/status_bar_pulse_charging_battery_summary_on"
+            android:summaryOff="@string/status_bar_pulse_charging_battery_summary_off"
+            android:defaultValue="false" />
+	
     <cyanogenmod.preference.CMSystemSettingSwitchPreference
          android:key="status_bar_notif_count"
          android:title="@string/status_bar_notif_count_title"
