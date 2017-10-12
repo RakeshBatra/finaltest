@@ -4038,7 +4038,6 @@ public final class Settings {
          */
         public static final String DIRTY_TWEAKS_TABS_EFFECT = "dirty_tweaks_tabs_effect";
 
-
         /**
          * Change quick settings tiles animation style
          *
@@ -7195,6 +7194,12 @@ public final class Settings {
          * @hide
          */
         public static final String DOZE_ENABLED = "doze_enabled";
+
+	/**
+         * Disable hw buttons - actions, brightness, haptic feedback, overflow menu
+         * @hide
+         */
+        public static final String HARDWARE_KEYS_DISABLE = "hardware_keys_disable";
 
         /**
          * Whether the device should pulse on pick up gesture.
