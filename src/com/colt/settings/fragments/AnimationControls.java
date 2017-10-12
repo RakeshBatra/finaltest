@@ -32,7 +32,6 @@ public class AnimationControls extends SettingsPreferenceFragment implements OnP
     private static final String WALLPAPER_INTRA_OPEN = "wallpaper_intra_open";
     private static final String WALLPAPER_INTRA_CLOSE = "wallpaper_intra_close";
     private static final String TASK_OPEN_BEHIND = "task_open_behind";
-    private static final String KEY_DT_TABS_EFFECT = "tabs_effect";
 
     ListPreference mActivityOpenPref;
     ListPreference mActivityClosePref;
@@ -45,7 +44,6 @@ public class AnimationControls extends SettingsPreferenceFragment implements OnP
     ListPreference mWallpaperIntraOpen;
     ListPreference mWallpaperIntraClose;
     ListPreference mTaskOpenBehind;
-    ListPreference mListViewTabsEffect;
 
     private int[] mAnimations;
     private String[] mAnimationsStrings;
@@ -132,19 +130,11 @@ public class AnimationControls extends SettingsPreferenceFragment implements OnP
         mTaskOpenBehind.setEntries(mAnimationsStrings);
         mTaskOpenBehind.setEntryValues(mAnimationsNum);
         mTaskOpenBehind.setOnPreferenceChangeListener(this);
-
-	mListViewTabsEffect = (ListPreference) findPreference(KEY_DT_TABS_EFFECT);
-        int tabsEffect = Settings.System.getInt(getContentResolver(),
-                Settings.System.DIRTY_TWEAKS_TABS_EFFECT, 0);
-        mListViewTabsEffect.setValue(String.valueOf(tabsEffect));
-        mListViewTabsEffect.setSummary(mListViewTabsEffect.getEntry());
-        mListViewTabsEffect.setOnPreferenceChangeListener(this);
     }
 
     @Override
     public boolean onPreferenceChange(Preference preference, Object newValue) {
         ContentResolver resolver = getActivity().getContentResolver();
-	boolean result = false;
         if (preference == mActivityOpenPref) {
             int val = Integer.parseInt((String) newValue);
             Settings.System.putInt(resolver,
@@ -211,13 +201,8 @@ public class AnimationControls extends SettingsPreferenceFragment implements OnP
                     Settings.System.ACTIVITY_ANIMATION_CONTROLS[10], val);
             preference.setSummary(getProperSummary(preference));
             return true;
-	 } else if (preference == mListViewTabsEffect) {
-            int value = Integer.valueOf((String) newValue);
-            int index = mListViewTabsEffect.findIndexOfValue((String) newValue);
-            Settings.System.putInt(getContentResolver(),
-                     Settings.System.DIRTY_TWEAKS_TABS_EFFECT, value);
-            mListViewTabsEffect.setSummary(mListViewTabsEffect.getEntries()[index]);
-            return true;
+        }
+        return false;
     }
 
     private String getProperSummary(Preference preference) {

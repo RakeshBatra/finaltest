@@ -1051,4 +1051,8 @@
     <string name="status_bar_pulse_charging_battery_summary_off">Only solid battery style will have pulsing icon</string>
     <string name="status_bar_pulse_charging_battery_summary_on">All battery styles will show pulsing animation</string>
 
+    <!-- Data/Wifi activity arrows -->
+    <string name="data_wifi_activity_arrows_title">Data/wifi activity</string>
+    <string name="data_wifi_activity_arrows_summary">Display data/wifi activity arrows</string>
+
  </resources>
